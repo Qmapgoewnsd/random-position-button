@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+</head>
+<style>
+    body {
+        height: 100%;
+        width: 98%;
+        position: relative;
+    }
+    #no-move-button {
+        position: absolute;
+        transition: left 0.3s, top 0.3s, right 0.3s, butt 0.3s;
+    }
+    button:hover {
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h4>Do You Love Me?:</h4>
+    <br>
+    <button id="yes-button">Yes!</button>
+    <button id="no-move-button">No</button>
+</body>
+<script>
+    const button = document.getElementById("no-move-button");
+    button.addEventListener('mouseenter', () => {
+        const randomX = Math.random() * (window.innerWidth - button.offsetWidth);
+        const randomY = Math.random() * (window.innerHeight - button.offsetHeight);
+        button.style.left = randomX + 'px';
+        button.style.top = randomY + 'px';
+    });
+    const yes = document.getElementById("yes-button");
+    yes.onclick = () => {
+        document.write("I Love You Too! <3");
+    }
+    button.onclick = () => {
+        document.write("How dare you?!");
+    }
+</script>
+</html>
